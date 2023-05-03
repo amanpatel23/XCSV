@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const crypto = require('crypto');
 
+// setting up multer for uploading csv files
 const storage = multer.diskStorage({
     destination: function(request, file, cb) {
         cb(null, path.join(__dirname, '..', '/uploads'));
@@ -14,6 +15,7 @@ const storage = multer.diskStorage({
     }
 })
 
+// checker for uploading only csv files
 const fileFilter = function(request, file, cb) {
     if (file.mimetype === "text/csv" ||
         file.mimetype === "application/vnd.ms-excel") {
@@ -31,9 +33,13 @@ const upload = multer({
     // }
 });
 
+// getting the files controller for performing actions on different routes
 const filesController = require('../controllers/files_controller');
+// for uploading csv file
 router.post('/upload-csv', upload.single('csv'), filesController.upload);
+// for deleting csv file
 router.get('/delete-csv', filesController.delete);
+// for showing csv file
 router.get('/show-csv', filesController.show);
 
 module.exports = router;

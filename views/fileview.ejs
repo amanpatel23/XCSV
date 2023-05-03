@@ -7,6 +7,7 @@
             <p><%= fileName %></p>
         </div>
         <div id="search__inner">
+            <!-- input box for typing text to match with the cell of any row -->
             <input id="search_box" type="text" placeholder="Search By Any Col...">
             <button id="submit_btn">Search</button>
         </div>
@@ -17,7 +18,9 @@
 
     <div id="table__outer">
         <div id="table__inner">
+            <!-- table to show the csv data in tabular form -->
             <table id="mytable">
+                <!-- table header -->
                 <thead>
                     <tr>
                         <% Object.keys(data[0]).forEach(function(header) { %>
@@ -26,8 +29,10 @@
                     </tr>
                 </thead>
             
+                <!-- table body -->
                 <tbody>
                     <% data.forEach(function(row) { %>
+                        <!-- a single row of the table -->
                         <tr class="table__row">
                             <% Object.values(row).forEach(function(cell) { %>
                                 <td><%= cell %></td>
@@ -39,11 +44,13 @@
         </div>
     </div>
     
+    <!-- section for showing the different page buttons -->
     <div id="pagination__outer">
         <div id="pagination__inner">
             <a href="/files/show-csv?fileName=<%= fileName %>&id=<%= id %>&currPage=<%= 1 %>" id="first__page">1</a>
             <span>...</span>
             <% for (page of pages) { %>
+                <!-- displaying the buttons to go to different pages -->
                 <a href="/files/show-csv?fileName=<%= fileName %>&id=<%= id %>&currPage=<%= page %>" id="<%= page == currPage ? 'active__page' : '' %>"><%= page %></a> 
             <% } %>
             <span>...</span>
@@ -52,4 +59,5 @@
     </div>    
 </div>
 
+<!-- linking javascript file -->
 <script src="/javascript/fileview.js"></script>

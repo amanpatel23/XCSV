@@ -6,8 +6,8 @@
     <div id="tagline">
       <p>Can Somebody Give Me A CSV File!</p>
     </div>
+    <!-- form for uploading the csv file -->
     <form id="myform" method="POST" action="/files/upload-csv" enctype="multipart/form-data">
-      <!-- <label for="file_upload">Browse</label> -->
       <input type="file" id="file_upload" name="csv" accept=".csv" required>
       <button type="submit">
         <p>Upload</p> 
@@ -21,12 +21,15 @@
   <div id="uploaded_files__inner">
     <ul id="files__list">
       <% for (file of files) { %>
+        <!-- showing list of uploaded files -->
         <li class="single__item">
           <div class="file__name">
             <p><%= file.filename %></p>
           </div>
           <div class="action__links">
+            <!-- button for opening the file -->
             <a target="_blank" href="/files/show-csv?fileName=<%= file.filename %>&id=<%= file._id %>&currPage=1"><img src="/icons/maximize.png" alt=""></a>
+            <!-- button for deleting the file -->
             <a href="/files/delete-csv?id=<%= file._id %>"><img src="/icons/bin.png" alt=""></a>
           </div>
         </li>
