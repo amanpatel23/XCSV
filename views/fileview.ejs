@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/fileview.css">
+
+<div id="outermost">
+
+    <div id="search__outer">
+        <div id="file_name">
+            <p><%= fileName %></p>
+        </div>
+        <div id="search__inner">
+            <input id="search_box" type="text" placeholder="Search By Any Col...">
+            <button id="submit_btn">Search</button>
+        </div>
+        <div id="search_result">
+            <p id="search_result_p"></p>
+        </div>
+    </div>
+
+    <div id="table__outer">
+        <div id="table__inner">
+            <table id="mytable">
+                <thead>
+                    <tr>
+                        <% Object.keys(data[0]).forEach(function(header) { %>
+                            <th><%= header %></th>
+                        <% }) %>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <% data.forEach(function(row) { %>
+                        <tr class="table__row">
+                            <% Object.values(row).forEach(function(cell) { %>
+                                <td><%= cell %></td>
+                            <% }) %>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="pagination__outer">
+        <div id="pagination__inner">
+            <a href="/files/show-csv?fileName=<%= fileName %>&id=<%= id %>&currPage=<%= 1 %>" id="first__page">1</a>
+            <span>...</span>
+            <% for (page of pages) { %>
+                <a href="/files/show-csv?fileName=<%= fileName %>&id=<%= id %>&currPage=<%= page %>" id="<%= page == currPage ? 'active__page' : '' %>"><%= page %></a> 
+            <% } %>
+            <span>...</span>
+            <a href="/files/show-csv?fileName=<%= fileName %>&id=<%= id %>&currPage=<%= maxPage %>" id="last__page"><%= maxPage %></a>
+        </div>
+    </div>    
+</div>
+
+<script src="/javascript/fileview.js"></script>

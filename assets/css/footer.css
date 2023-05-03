@@ -1,0 +1,23 @@
+#footer__outer {
+    background: #161616;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 14px;
+    border-top: 1px solid #fff;
+}
+
+#footer__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer__inner p {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+#footer__inner p span {
+    color: #e1351f;
+}

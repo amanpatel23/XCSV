@@ -1,0 +1,37 @@
+
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="form__section__outer">
+  <div id="form__section__inner">
+    <div id="tagline">
+      <p>Can Somebody Give Me A CSV File!</p>
+    </div>
+    <form id="myform" method="POST" action="/files/upload-csv" enctype="multipart/form-data">
+      <!-- <label for="file_upload">Browse</label> -->
+      <input type="file" id="file_upload" name="csv" accept=".csv" required>
+      <button type="submit">
+        <p>Upload</p> 
+        <img src="/icons/upload.png" alt="">
+      </button>
+    </form> 
+  </div> 
+</div> 
+
+<div id="uploaded_files__outer">
+  <div id="uploaded_files__inner">
+    <ul id="files__list">
+      <% for (file of files) { %>
+        <li class="single__item">
+          <div class="file__name">
+            <p><%= file.filename %></p>
+          </div>
+          <div class="action__links">
+            <a target="_blank" href="/files/show-csv?fileName=<%= file.filename %>&id=<%= file._id %>&currPage=1"><img src="/icons/maximize.png" alt=""></a>
+            <a href="/files/delete-csv?id=<%= file._id %>"><img src="/icons/bin.png" alt=""></a>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+

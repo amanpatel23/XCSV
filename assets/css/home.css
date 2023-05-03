@@ -1,0 +1,95 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: #161616;
+}
+
+#form__section__outer {
+    /* background: blue; */
+    width: 100%;
+    padding: 14px 0;
+}
+
+#form__section__inner {
+    /* background: #fff; */
+    width: 50%;
+    margin: auto;
+}
+
+#tagline {
+    font-size: 2rem;
+    margin-bottom: 28px;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}
+
+#myform {
+    display: flex;
+    justify-content: space-around;
+    /* background: green; */
+    align-items: center;
+}
+
+#file_upload {
+    color: #e1351f;
+    font-size: 1rem;
+}
+
+#myform button {
+    background: #e1351f;
+    border: none;
+    padding: 8px 24px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #161616;
+    display: flex;
+}
+
+#myform button img {
+    width: 1.2rem;
+    margin-left: 0.4rem;
+}
+
+#uploaded_files__outer {
+    /* background: blue; */
+    margin-top: 14px;
+    height: 50vh;
+}
+
+#uploaded_files__inner {
+    /* background: #404040; */
+    width: 60%;
+    margin: auto;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 14px 0;
+}
+
+#files__list {
+    list-style-type: none;
+}
+
+.single__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding: 10px 8px;
+    /* background: #de2600; */
+    background: #ab1d00;
+    color: #161616;
+    font-weight: 400;
+    font-size: 1.2rem;
+    align-items: center;
+    /* color: #fff; */
+}
+
+.action__links {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.action__links a img {
+    width: 1.2rem;
+}
