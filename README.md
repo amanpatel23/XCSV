@@ -2,6 +2,9 @@
 A web application that parses the csv files and show the data in tabular form. In this application we can upload any csv file, delete it and view the data of the file in
 tabular form. We can make search by any column value to get all the rows that matches the particular search text. We can navigate to different pages.
 
+## Important
+While running the application locally on your machine(on localhost), replace the database connection string in mongoose.js file with the local MONGODB connection
+string('mongodb://127.0.0.1/xcsv')
 
 ## Installation
 1. Clone this repository
