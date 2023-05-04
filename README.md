@@ -4,7 +4,7 @@ tabular form. We can make search by any column value to get all the rows that ma
 
 ## Important
 While running the application locally on your machine(on localhost), replace the database connection string in mongoose.js file with the local MONGODB connection
-string.
+string, otherwise the application will try to access those files which don't exist in the upload folder.
 ```
 mongoose.connect('mongodb://127.0.0.1/xcsv');
 ```
