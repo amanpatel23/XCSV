@@ -4,7 +4,10 @@ tabular form. We can make search by any column value to get all the rows that ma
 
 ## Important
 While running the application locally on your machine(on localhost), replace the database connection string in mongoose.js file with the local MONGODB connection
-string('mongodb://127.0.0.1/xcsv')
+string.
+```
+mongoose.connect('mongodb://127.0.0.1/xcsv');
+```
 
 ## Installation
 1. Clone this repository
